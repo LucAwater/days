@@ -1,19 +1,21 @@
 nav ul{
-  display: inline;
-  
+  text-align: center;
+
   li{
-    display: inline-block;
-    padding-right: 1em;
-    
     a{
       text-decoration: none;
+
+      &:hover,
+      &:focus{
+        font-weight: bold;
+      }
     }
   }
 }
 
 // Current item
 nav ul{
-  li.current{
-    text-decoration: underline;
+  li.current a{
+    font-weight: bold;
   }
 }

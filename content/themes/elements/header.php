@@ -34,9 +34,9 @@
 
 <body class="is-loading">
   <!-- Header -->
-  <header>
-    
-  </header>
+  <aside>
+    <?php include('includes/nav.php'); ?>
+  </aside>
 
   <!-- Main content -->
   <main role="main">

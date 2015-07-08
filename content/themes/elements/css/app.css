@@ -1352,9 +1352,22 @@ header {
   padding-right: 3.75rem; }
 
 main,
+aside,
 footer {
   padding-left: 3.75rem;
   padding-right: 3.75rem; }
+
+aside {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: #f0f0f0; }
+
+main {
+  float: right;
+  width: calc( 100% - 300px ); }
 
 @media only screen and (max-width: 31.25em) {
   header {
@@ -1459,15 +1472,14 @@ a.trigger-menu:focus i:before {
   -webkit-animation: activebefore .4s linear; }
 
 nav ul {
-  display: inline; }
-  nav ul li {
-    display: inline-block;
-    padding-right: 1em; }
-    nav ul li a {
-      text-decoration: none; }
+  text-align: center; }
+  nav ul li a {
+    text-decoration: none; }
+    nav ul li a:hover, nav ul li a:focus {
+      font-weight: bold; }
 
-nav ul li.current {
-  text-decoration: underline; }
+nav ul li.current a {
+  font-weight: bold; }
 
 .day {
   height: auto;

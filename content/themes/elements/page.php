@@ -29,7 +29,7 @@ $days = array( $monday, $tuesday, $wednesday, $thursday, $friday );
 
 foreach( $days as $day ):
   echo '<div class="day">';
-    echo '<h2>' . $day[0] . '</h2>';
+    echo '<h2 class="is-bold">' . $day[0] . '</h2>';
 
     echo '<ul>';
       foreach( $day[1] as $single ):
