@@ -30,13 +30,27 @@
 
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
+  
+  <script type="text/javascript">
+  function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+   }
+  </script>
 </head>
 
 <body class="is-loading">
   <!-- Header -->
   <aside>
     <?php include('includes/nav.php'); ?>
+    <input type="button" onclick="printDiv('main')" value="print this week" />
   </aside>
 
   <!-- Main content -->
-  <main role="main">
+  <main role="main" id="main">
