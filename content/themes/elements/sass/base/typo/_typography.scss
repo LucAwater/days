@@ -21,15 +21,19 @@ p{
 
 a{
   @extend %base;
-  
+
   color: black;
   text-decoration: underline;
   cursor: pointer;
-  
+
   &.link-h1,
   &.link-h2,
   &.link-h3,
   &.link-p{
     text-decoration: none;
   }
+}
+
+span{
+  @extend %base;
 }

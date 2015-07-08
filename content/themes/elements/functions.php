@@ -14,6 +14,14 @@ require_once('includes/admin/menu.php');
 require_once('includes/Mobile_Detect.php');
 $detect = new Mobile_Detect;
 
+// Admin favicon
+function favicon() {
+  echo '<link rel="shortcut icon" href="'.get_bloginfo('stylesheet_directory').'/img/favicon-32x32.png">';
+}
+
+add_action('wp_head', 'favicon');
+add_action('admin_head', 'favicon');
+
 // Hide admin bar
 add_filter('show_admin_bar', '__return_false');
 

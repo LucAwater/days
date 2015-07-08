@@ -21,12 +21,17 @@ $fri_name = array( get_field('friday') );
 $fri_items = array( get_field('friday_item') );
 $friday = array_merge( $fri_name, $fri_items );
 
-$days = array( $monday, $tuesday, $wednesday, $thursday, $friday );
+$sat_name = array( get_field('saturday') );
+$sat_items = array( get_field('saturday_item') );
+$saturday = array_merge( $sat_name, $sat_items );
 
-// echo '<pre>';
-// print_r($days);
-// echo '</pre>';
+$sun_name = array( get_field('sunday') );
+$sun_items = array( get_field('sunday_item') );
+$sunday = array_merge( $sun_name, $sun_items );
 
+$days = array( $monday, $tuesday, $wednesday, $thursday, $friday, $saturday, $sunday );
+
+// List entries per day
 foreach( $days as $day ):
   echo '<div class="day">';
     echo '<h2 class="is-bold">' . $day[0] . '</h2>';
@@ -37,6 +42,38 @@ foreach( $days as $day ):
       endforeach;
     echo '</ul>';
   echo '</div>';
+endforeach;
+
+// Get projects and hours in array per entry
+$projects = array();
+
+foreach( $days as $day ):
+  foreach( $day[1] as $single ):
+    array_push( $projects, array($single['item_project'], $single['item_hours']) );
+  endforeach;
+endforeach;
+
+// Get projects as keys
+$keys = array();
+foreach( $projects as $project ):
+  array_push( $keys, $project[0] );
+endforeach;
+$keys = array_filter( array_unique($keys) );
+
+// Match keys with projects in entries
+foreach( $keys as $key ):
+  ${"array" . $key} = array();
+
+  foreach( $projects as $project ):
+    if( $project[0] == $key ){
+      array_push( ${"array" . $key}, $project[1] );
+    }
+  endforeach;
+endforeach;
+
+// Echo totals
+foreach( $keys as $key ):
+  echo '<p class="is-bold">' . get_cat_name($key) . ': <span class="is-not-bold">' . array_sum(${"array" . $key}) . '</span></p>';
 endforeach;
 
 get_footer();
