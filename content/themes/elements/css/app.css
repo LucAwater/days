@@ -1,4 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 [class*="grid-"] {
   display: block;
   padding: 0;
@@ -1320,13 +1319,10 @@ ul {
   margin-bottom: 6.25rem !important; }
 
 h1, h2, p, a, span {
-  font-family: 'Open Sans', sans-serif;
-  font-style: normal;
+  font-family: 'futura-pt', sans-serif;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision; }
-  h1.is_bold, h2.is_bold, p.is_bold, a.is_bold, span.is_bold {
-    font-weight: 700; }
 
 h1, h2 {
   font-size: 3em; }
@@ -1721,7 +1717,7 @@ h1.is-uppercase, h2.is-uppercase, p.is-uppercase, a.is-uppercase, span.is-upperc
 h1.is-lowercase, h2.is-lowercase, p.is-lowercase, a.is-lowercase, span.is-lowercase {
   text-transform: lowercase; }
 h1.is-bold, h2.is-bold, p.is-bold, a.is-bold, span.is-bold {
-  font-weight: 700; }
+  font-weight: 500; }
 h1.is-not-bold, h2.is-not-bold, p.is-not-bold, a.is-not-bold, span.is-not-bold {
   font-weight: normal; }
 h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, a.is-aligned-center, span.is-aligned-center {
