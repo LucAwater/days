@@ -18,13 +18,19 @@
     span{
       float: left;
 
-      width: calc( 100% / 3 );
+      width: 25%;
 
-      text-align: right;
+      text-align: left;
     }
 
     span:first-child{
+      width: 50%;
+
       text-align: left;
+    }
+
+    span:last-child{
+      text-align: right;
     }
   }
 }

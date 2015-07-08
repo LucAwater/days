@@ -73,7 +73,7 @@ endforeach;
 
 // Echo totals
 foreach( $keys as $key ):
-  echo '<p class="is-bold">' . get_cat_name($key) . ': <span class="is-not-bold">' . array_sum(${"array" . $key}) . '</span></p>';
+  echo '<p class="is-bold">' . get_cat_name( $key ) . ': <span class="is-not-bold">' . array_sum( ${"array" . $key} ) . '</span></p>';
 endforeach;
 
 get_footer();

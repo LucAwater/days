@@ -1494,10 +1494,13 @@ nav ul li.current a {
   text-align: center; }
   .day ul li p span {
     float: left;
-    width: calc( 100% / 3 );
-    text-align: right; }
-  .day ul li p span:first-child {
+    width: 25%;
     text-align: left; }
+  .day ul li p span:first-child {
+    width: 50%;
+    text-align: left; }
+  .day ul li p span:last-child {
+    text-align: right; }
 
 /*
  * Show and Hide class functions
