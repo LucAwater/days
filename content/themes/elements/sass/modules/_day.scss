@@ -1,0 +1,30 @@
+.day{
+  height: auto;
+  overflow: hidden;
+  max-width: 700px;
+  margin: auto;
+  padding: 25px 0;
+
+  h2{
+    margin-bottom: .5em;
+  }
+}
+
+// List item
+.day ul li{
+  p{
+    text-align: center;
+
+    span{
+      float: left;
+
+      width: calc( 100% / 3 );
+
+      text-align: right;
+    }
+
+    span:first-child{
+      text-align: left;
+    }
+  }
+}
