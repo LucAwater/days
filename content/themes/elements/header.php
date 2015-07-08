@@ -30,7 +30,7 @@
 
   <!-- WP_HEAD() -->
   <?php wp_head(); ?>
-  
+
   <script type="text/javascript">
   function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
@@ -48,8 +48,13 @@
 <body class="is-loading">
   <!-- Header -->
   <aside>
+    <div>
+      <img src="<?php echo get_template_directory_uri(); ?>/img/logo-inversed.svg">
+    </div>
+
     <?php include('includes/nav.php'); ?>
-    <input type="button" onclick="printDiv('main')" value="print this week" />
+
+    <input type="button" onclick="printDiv('main')" value="print current week" />
   </aside>
 
   <!-- Main content -->

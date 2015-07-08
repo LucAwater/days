@@ -10,7 +10,6 @@ header{
 }
 
 main,
-aside,
 footer{
   padding-left: $side-margin;
   padding-right: $side-margin;
@@ -29,7 +28,7 @@ aside{
 
 main{
   float: right;
-  
+
   width: calc( 100% - 300px );
 }
 
