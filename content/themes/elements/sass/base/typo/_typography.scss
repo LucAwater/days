@@ -1,5 +1,5 @@
 %base{
-  @include futura;
+  @include proxima;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision;
@@ -12,16 +12,21 @@ h1{
 
 h2{
   @extend h1;
-  font-size: 2em;
+  font-size: 24px;
 }
 
 p{
   @extend %base;
+
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 a{
   @extend %base;
 
+  font-size: 15px;
+  line-height: 1.4;
   color: black;
   text-decoration: underline;
   cursor: pointer;
@@ -36,4 +41,5 @@ a{
 
 span{
   @extend %base;
+  @extend p;
 }
