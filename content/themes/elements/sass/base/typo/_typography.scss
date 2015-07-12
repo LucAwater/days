@@ -1,5 +1,6 @@
 %base{
-  @include proxima;
+  @include source;
+
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision;
@@ -7,12 +8,23 @@
 
 h1{
   @extend %base;
-  font-size: 3em;
+  @include futura;
+
+  font-size: 45px;
+  font-weight: 500;
+
+  span{
+    @extend h1;
+  }
 }
 
 h2{
-  @extend h1;
-  font-size: 24px;
+  @extend %base;
+  @include futura;
+
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
 }
 
 p{

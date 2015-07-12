@@ -1318,17 +1318,22 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h2, p, span, a {
-  font-family: 'tk-proxima-nova', sans-serif;
+h1, h1 span, h2, p, span, a {
+  font-family: 'source-code-pro', sans-serif;
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision; }
 
-h1, h2 {
-  font-size: 3em; }
+h1, h1 span {
+  font-family: 'futura-pt', sans-serif;
+  font-size: 45px;
+  font-weight: 500; }
 
 h2 {
-  font-size: 24px; }
+  font-family: 'futura-pt', sans-serif;
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-transform: lowercase; }
 
 p, span {
   font-size: 15px;
@@ -1447,8 +1452,10 @@ aside > div {
     width: 50%;
     margin: auto; }
 
-div.content h1, div.content h2 {
+div.content h1, div.content h1 span, h1 div.content span {
   padding: 25px 0; }
+  div.content h1 span, h1 div.content span span {
+    margin-left: 25px; }
 
 a.trigger-menu {
   width: 35px;
@@ -1507,7 +1514,7 @@ nav ul li.current a {
   overflow: hidden;
   padding: 25px 0; }
   .activities h2 {
-    margin-bottom: 25px; }
+    margin-bottom: 10px; }
 
 .activities ul li {
   height: auto;
@@ -1741,6 +1748,8 @@ h1.is-black, h2.is-black, p.is-black, span.is-black, a.is-black {
   color: black; }
 h1.is-white, h2.is-white, p.is-white, span.is-white, a.is-white {
   color: white; }
+h1.is-grey, h2.is-grey, p.is-grey, span.is-grey, a.is-grey {
+  color: #f0f0f0; }
 
 p.is-small, span.is-small {
   font-size: 15px; }

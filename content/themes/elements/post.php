@@ -5,7 +5,7 @@ get_header();
 $date_from = get_field( 'date_from' );
 $date_until = get_field( 'date_until' );
 
-echo '<h1>' . get_the_title() . '<span>' . substr($date_from, 0, 5) . ' – ' . substr($date_until, 0, 5) . '</h1>';
+echo '<h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>';
 
 // Get days
 include('days.php');
