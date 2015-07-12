@@ -6,9 +6,15 @@ echo
 '<nav>
   <ul>';
 
+    $current = get_the_title();
+    
     // The Loop
     while ( have_posts() ) : the_post();
+      if( $current === get_the_title() ):
+        echo '<li class="current"><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+      else:
         echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>';
+      endif;
     endwhile;
 
   echo
