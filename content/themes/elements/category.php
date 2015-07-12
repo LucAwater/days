@@ -4,14 +4,13 @@ get_header();
 $project_totals = array();
 
 if( have_posts() ):
-  while( have_posts() ): the_post();
-    // Name project
-    // Week number
-    // Activities
-    // Total hours
-    $cat_ID = get_cat_ID( single_cat_title('', false) );
-    $cat = get_the_category($cat_ID);
 
+  $cat_ID = get_cat_ID( single_cat_title('', false) );
+  $cat = get_the_category($cat_ID);
+
+  echo '<h1>' . get_cat_name( $cat_ID ) . '</h1>';
+  
+  while( have_posts() ): the_post();
 
     echo '<div class="activities week">';
       echo '<h2>' . get_the_title() . '</h3>';
