@@ -1369,6 +1369,10 @@ aside {
 main {
   float: right;
   width: calc( 100% - 300px ); }
+  main div.content {
+    width: 100%;
+    max-width: 700px;
+    margin: auto; }
 
 @media only screen and (max-width: 31.25em) {
   header {
@@ -1443,6 +1447,9 @@ aside > div {
     width: 50%;
     margin: auto; }
 
+div.content h1, div.content h2 {
+  padding: 25px 0; }
+
 a.trigger-menu {
   width: 35px;
   height: 35px;
@@ -1495,28 +1502,26 @@ nav ul {
 nav ul li.current a {
   font-weight: bold; }
 
-.day {
+.activities {
   height: auto;
   overflow: hidden;
-  max-width: 700px;
-  margin: auto;
   padding: 25px 0; }
-  .day h2 {
-    margin-bottom: .5em; }
+  .activities h2 {
+    margin-bottom: 25px; }
 
-.day ul li {
+.activities ul li {
   height: auto;
   overflow: hidden; }
-  .day ul li p, .day ul li span {
+  .activities ul li p, .activities ul li span {
     text-align: center; }
-    .day ul li p span, .day ul li span span {
+    .activities ul li p span, .activities ul li span span {
       float: left;
       width: 25%;
       text-align: left; }
-    .day ul li p span:first-child, .day ul li span span:first-child {
+    .activities ul li p span:first-child, .activities ul li span span:first-child {
       width: 50%;
       text-align: left; }
-    .day ul li p span:last-child, .day ul li span span:last-child {
+    .activities ul li p span:last-child, .activities ul li span span:last-child {
       text-align: right; }
 
 /*

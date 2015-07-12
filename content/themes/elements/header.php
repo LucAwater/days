@@ -63,3 +63,4 @@
 
   <!-- Main content -->
   <main role="main" id="main">
+    <div class="content">

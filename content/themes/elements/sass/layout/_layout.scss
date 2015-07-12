@@ -30,6 +30,12 @@ main{
   float: right;
 
   width: calc( 100% - 300px );
+
+  div.content{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+  }
 }
 
 @media #{$small-only}{
