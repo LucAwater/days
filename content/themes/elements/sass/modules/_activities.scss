@@ -4,7 +4,66 @@
   padding: 25px 0;
 
   h2{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+}
+
+.activities table{
+  width: 100%;
+
+  colgroup,
+  tbody tr{
+    td{
+      vertical-align: top;
+    }
+    .activity{
+      width: 50%;
+      padding-right: 10px;
+    }
+
+    .project{
+      width: 20%;
+      padding-right: 10px;
+    }
+
+    .type{
+      width: 20%;
+      text-align: right;
+    }
+
+    .hours{
+      width: 10%;
+      text-align: right;
+    }
+  }
+
+  thead tr{
+    th{
+      padding-bottom: 5px;
+
+      span{
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+        color: $grey;
+      }
+    }
+
+    th:nth-child(1){
+      text-align: left;
+    }
+
+    th:nth-child(2){
+      text-align: left;
+    }
+
+    th:nth-child(3){
+      text-align: right;
+    }
+
+    th:nth-child(4){
+      text-align: right;
+    }
   }
 }
 

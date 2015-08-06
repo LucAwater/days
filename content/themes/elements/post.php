@@ -15,11 +15,33 @@ foreach( $days as $day ):
   echo '<div class="activities day">';
     echo '<h2 class="is-bold">' . $day[0] . '</h2>';
 
-    echo '<ul>';
-      foreach( $day[1] as $single ):
-        echo '<li><p><span>' . $single['item_activity'] . '</span><span><a href="' . get_category_link( $single['item_project'] ) . '">' . get_cat_name( $single['item_project'] ) . '</a></span><span>' . $single['item_hours'] . '</span></p></li>';
-      endforeach;
-    echo '</ul>';
+    echo
+    '<table>
+      <colgroup>
+        <col class="activity">
+        <col class="project">
+        <col class="hours">
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th><span>Activity</span></th>
+          <th><span>Project</span></th>
+          <th><span>Hours</span></th>
+        </tr>
+      </thead>
+
+      <tbody>';
+        foreach( $day[1] as $single ):
+          echo
+          '<tr>
+            <td class="activity"><span>' . $single['item_activity'] . '</span></td>
+            <td class="project"><span><a href="' . get_category_link( $single['item_project'] ) . '">' . get_cat_name( $single['item_project'] ) . '</a></span></td>
+            <td class="hours"><span>' . $single['item_hours'] . '</span></td>
+          </tr>';
+        endforeach;
+      echo '</tbody>';
+    echo '</table>';
   echo '</div>';
 endforeach;
 
@@ -51,9 +73,16 @@ foreach( $keys as $key ):
 endforeach;
 
 // Echo totals
+$week_total = array();
+
 foreach( $keys as $key ):
-  echo '<p class="is-bold">' . get_cat_name( $key ) . ': <span class="is-not-bold">' . array_sum( ${"array" . $key} ) . '</span></p>';
+  $project_total = array_sum( ${"array" . $key} );
+  array_push( $week_total, $project_total );
+
+  echo '<p class="is-bold">' . get_cat_name( $key ) . ': <span class="is-not-bold">' . $project_total . '</span></p>';
 endforeach;
+
+echo '<p>Total hours this week: ' . array_sum( $week_total ) . '</p>';
 
 get_footer();
 ?>
