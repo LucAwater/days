@@ -12,37 +12,41 @@ include('days.php');
 
 // List entries per day
 foreach( $days as $day ):
-  echo '<div class="activities day">';
-    echo '<h2 class="is-bold">' . $day[0] . '</h2>';
+  if( !empty($day[1][0][item_activity]) ):
+    echo '<div class="activities day">';
+      echo '<h2 class="is-bold">' . $day[0] . '</h2>';
 
-    echo
-    '<table>
-      <colgroup>
-        <col class="activity">
-        <col class="project">
-        <col class="hours">
-      </colgroup>
+      echo
+      '<table>
+        <colgroup>
+          <col class="activity">
+          <col class="project">
+          <col class="hours">
+        </colgroup>
 
-      <thead>
-        <tr>
-          <th><span>Activity</span></th>
-          <th><span>Project</span></th>
-          <th><span>Hours</span></th>
-        </tr>
-      </thead>
+        <thead>
+          <tr>
+            <th><span>Activity</span></th>
+            <th><span>Project</span></th>
+            <th><span>Hours</span></th>
+          </tr>
+        </thead>
 
-      <tbody>';
-        foreach( $day[1] as $single ):
-          echo
-          '<tr>
-            <td class="activity"><span>' . $single['item_activity'] . '</span></td>
-            <td class="project"><span><a href="' . get_category_link( $single['item_project'] ) . '">' . get_cat_name( $single['item_project'] ) . '</a></span></td>
-            <td class="hours"><span>' . $single['item_hours'] . '</span></td>
-          </tr>';
-        endforeach;
-      echo '</tbody>';
-    echo '</table>';
-  echo '</div>';
+        <tbody>';
+          foreach( $day[1] as $single ):
+            echo
+            '<tr>
+              <td class="activity"><span>' . $single['item_activity'] . '</span></td>
+              <td class="project"><span><a href="' . get_category_link( $single['item_project'] ) . '">' . get_cat_name( $single['item_project'] ) . '</a></span></td>
+              <td class="hours"><span>' . $single['item_hours'] . '</span></td>
+            </tr>';
+          endforeach;
+        echo '</tbody>';
+      echo '</table>';
+    echo '</div>';
+  else:
+    // Do nothing
+  endif;
 endforeach;
 
 // Get projects and hours in array per entry
@@ -73,16 +77,23 @@ foreach( $keys as $key ):
 endforeach;
 
 // Echo totals
-$week_total = array();
+echo '<div class="totals week">';
+  $week_total = array();
 
-foreach( $keys as $key ):
-  $project_total = array_sum( ${"array" . $key} );
-  array_push( $week_total, $project_total );
+  foreach( $keys as $key ):
+    $project_total = array_sum( ${"array" . $key} );
+    array_push( $week_total, $project_total );
 
-  echo '<p class="is-bold">' . get_cat_name( $key ) . ': <span class="is-not-bold">' . $project_total . '</span></p>';
-endforeach;
+    echo '<p>' . get_cat_name( $key ) . ': <span class="is-not-bold">' . $project_total . '</span></p>';
+  endforeach;
 
-echo '<p>Total hours this week: ' . array_sum( $week_total ) . '</p>';
+  $week_total = array_sum($week_total);
+  if( $week_total === 0 ){
+    echo '<p>No entries this week</p>';
+  } else {
+    echo '<p class="is-bold">Total hours this week: ' . $week_total . '</p>';
+  }
+echo '</div>';
 
 get_footer();
 ?>

@@ -1,0 +1,11 @@
+.totals{
+  margin-top: 50px;
+  padding-top: 25px;
+
+  text-align: right;
+  border-top: 2px solid $grey;
+
+  p:last-child{
+    margin-top: 1em;
+  }
+}

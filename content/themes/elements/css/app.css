@@ -1570,6 +1570,14 @@ nav ul li.current a {
     .activities ul li p span:last-child, .activities ul li span span:last-child {
       text-align: right; }
 
+.totals {
+  margin-top: 50px;
+  padding-top: 25px;
+  text-align: right;
+  border-top: 2px solid #e0e0e0; }
+  .totals p:last-child, .totals span:last-child {
+    margin-top: 1em; }
+
 /*
  * Show and Hide class functions
  */
@@ -1774,7 +1782,7 @@ h1.is-uppercase, h2.is-uppercase, p.is-uppercase, span.is-uppercase, a.is-upperc
 h1.is-lowercase, h2.is-lowercase, p.is-lowercase, span.is-lowercase, a.is-lowercase {
   text-transform: lowercase; }
 h1.is-bold, h2.is-bold, p.is-bold, span.is-bold, a.is-bold {
-  font-weight: 500; }
+  font-weight: 700; }
 h1.is-not-bold, h2.is-not-bold, p.is-not-bold, span.is-not-bold, a.is-not-bold {
   font-weight: normal; }
 h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, span.is-aligned-center, a.is-aligned-center {
