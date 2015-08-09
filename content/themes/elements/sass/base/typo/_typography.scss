@@ -1,5 +1,5 @@
 %base{
-  @include source;
+  @include brandon;
 
   font-size: 16px;
   font-weight: normal;
@@ -8,10 +8,9 @@
 
 h1{
   @extend %base;
-  @include futura;
 
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
 
@@ -22,28 +21,33 @@ h1{
 
 h2{
   @extend %base;
-  @include futura;
 
-  font-size: 21px;
   letter-spacing: 2px;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 
 p{
   @extend %base;
 
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.4;
+  text-transform: lowercase;
 }
 
 a{
   @extend %base;
 
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.4;
-  color: black;
-  text-decoration: underline;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: $black;
   cursor: pointer;
+
+  &:hover,
+  &:active{
+    text-decoration: underline;
+  }
 
   &.link-h1,
   &.link-h2,

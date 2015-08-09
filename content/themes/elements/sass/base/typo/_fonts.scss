@@ -1,7 +1,23 @@
 @mixin source{
   font-family: 'source-code-pro', sans-serif;
+
+  &.is-bold{
+    font-weight: 700;
+  }
 }
 
 @mixin futura{
   font-family: 'futura-pt', sans-serif;
+
+  &.is-bold{
+    font-weight: 500;
+  }
+}
+
+@mixin brandon{
+  font-family: "brandon-grotesque";
+
+  &.is-bold{
+    font-weight: 700;
+  }
 }
