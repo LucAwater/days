@@ -19,6 +19,21 @@ function favicon() {
   echo '<link rel="shortcut icon" href="'.get_bloginfo('stylesheet_directory').'/img/favicon-32x32.png">';
 }
 
+/**
+ * Adds a pinned tabs icon
+ *
+ * @param $meta_tags
+ *
+ * @return array
+ */
+function yst_site_icons( $meta_tags ) {
+  // Mask icon for Safari pinned tabs
+  $meta_tags[] = "<link rel='mask-icon' color='#F26E21' href='" . get_template_directory_uri() . "/img/logo-favicon-apple.svg'>";
+
+  return $meta_tags;
+}
+add_filter( 'site_icon_meta_tags', 'yst_site_icons' );
+
 add_action('wp_head', 'favicon');
 add_action('admin_head', 'favicon');
 

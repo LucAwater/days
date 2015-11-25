@@ -50,17 +50,17 @@
 </head>
 
 <body class="is-loading">
-  <!-- Header -->
-  <aside>
-    <div>
-      <img src="<?php echo get_template_directory_uri(); ?>/img/logo-inversed.svg">
-    </div>
-
-    <?php include('includes/nav.php'); ?>
-
-    <input type="button" onclick="printDiv('main')" value="print current week" />
-  </aside>
-
   <!-- Main content -->
   <main role="main" id="main">
     <div class="content">
+      <?php
+      $date = get_field("date_from");
+      $dateTime = DateTime::createFromFormat("d/m/Y", $date);
+
+      if ( is_object($dateTime) ) {
+        $month = $dateTime->format('m');
+        $year = $dateTime->format('Y');
+      }
+      echo ' month: ' . $month;
+      echo ' year: ' . $year;
+      ?>
