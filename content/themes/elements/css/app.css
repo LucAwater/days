@@ -1364,7 +1364,6 @@ main {
   width: 100%; }
   main div.content {
     width: 100%;
-    max-width: 700px;
     margin: auto; }
 
 main {
@@ -1431,11 +1430,6 @@ aside > div {
     width: 50%;
     margin: auto; }
 
-div.content h1, div.content h1 span, h1 div.content span {
-  padding: 25px 0; }
-  div.content h1 span, h1 div.content span span {
-    margin-left: 25px; }
-
 a.trigger-menu {
   width: 35px;
   height: 35px;
@@ -1488,8 +1482,21 @@ nav ul {
 nav ul li.current a {
   font-weight: bold; }
 
+.week-heading {
+  padding: 80px 0;
+  margin-bottom: 20px;
+  background-color: #f4f5f6; }
+  .week-heading h1, .week-heading h1 span, h1 .week-heading span {
+    max-width: 700px;
+    margin: auto; }
+    .week-heading h1 span, h1 .week-heading span span {
+      margin-left: 25px;
+      color: #e0e0e0; }
+
 .activities {
   height: auto;
+  max-width: 700px;
+  margin: auto;
   overflow: hidden;
   padding: 25px 0; }
   .activities h2 {
@@ -1771,7 +1778,7 @@ h1.is-black, h2.is-black, p.is-black, span.is-black, a.is-black {
 h1.is-white, h2.is-white, p.is-white, span.is-white, a.is-white {
   color: white; }
 h1.is-grey, h2.is-grey, p.is-grey, span.is-grey, a.is-grey {
-  color: #f0f0f0; }
+  color: #f4f5f6; }
 
 p.is-small, span.is-small {
   font-size: 15px; }

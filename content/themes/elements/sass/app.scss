@@ -22,13 +22,13 @@
   "layout/_header",
   "layout/_footer",
   "layout/_aside",
-  "layout/_content",
 
   "layout/navigation/_menu.scss",
   "layout/navigation/_nav.scss";
 
 // MODULE
 @import
+  "modules/_week",
   "modules/_activities",
   "modules/_totals";
 
