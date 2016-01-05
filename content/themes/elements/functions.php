@@ -6,9 +6,14 @@
 // Includes
 require_once('includes/scripts.php');
 
+require_once('includes/table-start.php');
+require_once('includes/table-end.php');
+require_once('includes/days.php');
+require_once('includes/days-start.php');
+require_once('includes/days-single.php');
+
+require_once('includes/admin/custom-content.php');
 require_once('includes/admin/login.php');
-require_once('includes/admin/removal.php');
-require_once('includes/admin/menu.php');
 
 // Initialize mobile detect
 require_once('includes/Mobile_Detect.php');
