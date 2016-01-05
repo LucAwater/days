@@ -27,8 +27,9 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/app.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/print.css" media="print">
 
-  <!-- Fonts form Typekit -->
+  <!-- Fonts from Typekit -->
   <script src="//use.typekit.net/bux1knv.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 
@@ -49,11 +50,11 @@
   </script>
 </head>
 
-<body class="is-loading">
+<body>
   <!-- Main content -->
-  <main role="main" id="main">
+  <main role="main">
     <div class="content">
-      <?php
+      <!-- <?php
       $date = get_field("date_from");
       $dateTime = DateTime::createFromFormat("d/m/Y", $date);
 
@@ -63,4 +64,4 @@
       }
       echo ' month: ' . $month;
       echo ' year: ' . $year;
-      ?>
+      ?> -->

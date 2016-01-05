@@ -7,47 +7,33 @@ $date_until = get_field( 'date_until' );
 
 echo '<h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>';
 
-// Get days
-include('days.php');
+/*
+ * Days table
+ */
+include_once('days.php');
 
-// List entries per day
 foreach( $days as $day ):
-  if( !empty($day[1][0][item_activity]) ):
-    echo '<div class="activities day">';
-      echo '<h2 class="is-bold">' . $day[0] . '</h2>';
+  if( !empty($day[1][0]['item_activity']) ):
+    // Open the table
+    include('table-start.php');
 
-      echo
-      '<table>
-        <colgroup>
-          <col class="activity">
-          <col class="project">
-          <col class="hours">
-        </colgroup>
+    // Loop through activities
+    echo '<tbody>';
+      foreach( $day[1] as $single ):
+        include('days-single.php');
+      endforeach;
+    echo '</tbody>';
 
-        <thead>
-          <tr>
-            <th><span>Activity</span></th>
-            <th><span>Project</span></th>
-            <th><span>Hours</span></th>
-          </tr>
-        </thead>
-
-        <tbody>';
-          foreach( $day[1] as $single ):
-            echo
-            '<tr>
-              <td class="activity"><span>' . $single['item_activity'] . '</span></td>
-              <td class="project"><span><a href="' . get_category_link( $single['item_project'] ) . '">' . get_cat_name( $single['item_project'] ) . '</a></span></td>
-              <td class="hours"><span>' . $single['item_hours'] . '</span></td>
-            </tr>';
-          endforeach;
-        echo '</tbody>';
-      echo '</table>';
-    echo '</div>';
+    // Close the table
+    include('table-end.php');
   else:
     // Do nothing
   endif;
 endforeach;
+
+/*
+ * Totals per project and overall
+ */
 
 // Get projects and hours in array per entry
 $projects = array();

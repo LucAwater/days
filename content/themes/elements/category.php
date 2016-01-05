@@ -9,11 +9,13 @@ if( have_posts() ):
   $cat = get_the_category($cat_ID);
 
   echo '<h1>' . get_cat_name( $cat_ID ) . '</h1>';
-  
+
   while( have_posts() ): the_post();
+  $date_from = get_field("date_from");
+  $date_until = get_field("date_until");
 
     echo '<div class="activities week">';
-      echo '<h2>' . get_the_title() . '</h3>';
+      echo '<h2>' . get_the_title() . ' | ' . $date_from . ' – ' . $date_until . '</h3>';
 
       echo '<ul>';
         // Get days
