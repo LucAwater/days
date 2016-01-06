@@ -8,6 +8,8 @@ require_once('includes/scripts.php');
 
 require_once('includes/table-start.php');
 require_once('includes/table-end.php');
+
+require_once('includes/activities.php');
 require_once('includes/days.php');
 require_once('includes/days-start.php');
 require_once('includes/days-single.php');

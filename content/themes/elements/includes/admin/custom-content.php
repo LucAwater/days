@@ -74,4 +74,43 @@ function custom_tax_project(){
 }
 add_action('init','custom_tax_project');
 
+function custom_tax_activity_type(){
+
+   //set the name of the taxonomy
+   $taxonomy = 'activity_type';
+   //set the post types for the taxonomy
+   $object_type = 'weeks';
+
+   //populate our array of names for our taxonomy
+   $labels = array(
+       'name'               => 'Activity Types',
+       'singular_name'      => 'Activity Type',
+       'search_items'       => 'Search Types',
+       'all_items'          => 'All Types',
+       'parent_item'        => 'Parent Type',
+       'parent_item_colon'  => 'Parent Type:',
+       'update_item'        => 'Update Type',
+       'edit_item'          => 'Edit Type',
+       'add_new_item'       => 'Add New Type',
+       'new_item_name'      => 'New Type Name',
+       'menu_name'          => 'Activity Types'
+   );
+
+   //define arguments to be used
+   $args = array(
+       'labels'            => $labels,
+       'hierarchical'      => true,
+       'show_ui'           => true,
+       'how_in_nav_menus'  => true,
+       'public'            => true,
+       'show_admin_column' => true,
+       'query_var'         => true,
+       'rewrite'           => array('slug' => 'activity_type')
+   );
+
+   //call the register_taxonomy function
+   register_taxonomy($taxonomy, $object_type, $args);
+}
+add_action('init','custom_tax_activity_type');
+
 ?>

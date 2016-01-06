@@ -5,6 +5,7 @@ function days_table_start() {
     <colgroup>
       <col class="activity">
       <col class="project">
+      <col class="type">
       <col class="hours">
     </colgroup>
 
@@ -12,6 +13,7 @@ function days_table_start() {
       <tr>
         <th><span>Activity</span></th>
         <th><span>Project</span></th>
+        <th><span>Type</span></th>
         <th><span>Hours</span></th>
       </tr>
     </thead>';

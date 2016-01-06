@@ -1,16 +1,49 @@
 <?php
-function days_single($activity) {
-  $title = $activity['item_activity'];
-  $project_ID = $activity['item_project'];
-  $project = get_term_by('id', $project_ID, 'project');
-  $project_name = $project->name;
-  $project_url = get_term_link($project);
+function days_single() {
+  // Build the query
+  $args = array(
+    'post_type'       => 'weeks',
+    'posts_per_page'  => 1
+  );
+  $query = new WP_Query( $args );
 
-  echo
-  '<tr>
-    <td class="activity"><span>' . $title . '</span></td>
-    <td class="project"><span><a href="' . $project_url . '">' . $project_name . '</a></span></td>
-    <td class="hours"><span>8</span></td>
-  </tr>';
+  // Start the loop
+  if( $query->have_posts() ):
+    while( $query->have_posts() ) : $query->the_post();
+
+      // Get the days in an array
+      include('days.php');
+
+      // Get week and dates
+      $date_from = get_field( 'date_from' );
+      $date_until = get_field( 'date_until' );
+
+      echo
+      '<div class="week-heading">
+        <h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>
+      </div>';
+
+      // Loop through the days
+      foreach( $days as $day ):
+        if(! empty($day[1][0]['item_activity']) ):
+
+          // Open the day and the table
+          days_start($day);
+            days_table_start();
+
+              // Loop through activities
+              $activities = $day[1];
+              foreach( $activities as $activity ):
+                activities_single($activity);
+              endforeach;
+
+            days_table_end();
+          days_end();
+
+        endif;
+      endforeach;
+
+    endwhile;
+  endif;
 }
 ?>
