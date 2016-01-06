@@ -1,0 +1,24 @@
+// BASE
+@import
+  "base/_reset",
+  "base/_mixins",
+  "base/_functions",
+  "base/_colors",
+
+  "base/typo/_fonts",
+  "base/typo/_typography";
+
+body{
+  margin: 5mm 15mm;
+}
+
+.week-heading{
+  padding: 5mm 0;
+  margin-bottom: 10mm;
+
+  border-bottom: thin solid $grey;
+}
+
+#button-print{
+  display: none;
+}
