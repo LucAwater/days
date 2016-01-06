@@ -1,7 +1,7 @@
 <?php
 get_header();
 
-days_single();
+get_template_part('single', 'weeks');
 
 get_footer();
 ?>
