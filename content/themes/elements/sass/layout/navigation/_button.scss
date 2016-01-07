@@ -1,0 +1,23 @@
+button,
+.button{
+  @include transition( .2s );
+  
+  padding: 8px 15px;
+
+  color: $white;
+  border-radius: 3px;
+  background-color: $green;
+
+  &:hover,
+  &:active{
+    text-decoration: none;
+    background-color: $green-dark;
+  }
+}
+
+#button-print{
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  z-index: 999;
+}

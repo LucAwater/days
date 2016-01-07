@@ -1367,12 +1367,13 @@ main {
     margin: auto; }
 
 main {
+  z-index: 900;
   height: auto !important;
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: white;
-  z-index: 900; }
+  padding-bottom: 150px;
+  background: white; }
 
 header {
   display: -webkit-box;
@@ -1482,6 +1483,29 @@ nav ul {
 nav ul li.current a {
   font-weight: bold; }
 
+button,
+.button {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 3px;
+  background-color: #65c080; }
+  button:hover, button:active,
+  .button:hover,
+  .button:active {
+    text-decoration: none;
+    background-color: #46ac64; }
+
+#button-print {
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  z-index: 999; }
+
 .week-heading {
   padding: 80px 0;
   margin-bottom: 20px;
@@ -1555,6 +1579,8 @@ nav ul li.current a {
       text-align: right; }
 
 .totals {
+  max-width: 700px;
+  margin: auto;
   margin-top: 50px;
   padding-top: 25px;
   text-align: right;
