@@ -8,4 +8,8 @@ function days_start($day) {
 function days_end() {
   echo '</div>';
 }
+
+function days_project_start($day) {
+  echo '<div class="activities day">';
+}
 ?>

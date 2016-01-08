@@ -52,16 +52,5 @@
 
 <body>
   <!-- Main content -->
-  <main role="main">
+  <main id="main" role="main">
     <div class="content">
-      <!-- <?php
-      $date = get_field("date_from");
-      $dateTime = DateTime::createFromFormat("d/m/Y", $date);
-
-      if ( is_object($dateTime) ) {
-        $month = $dateTime->format('m');
-        $year = $dateTime->format('Y');
-      }
-      echo ' month: ' . $month;
-      echo ' year: ' . $year;
-      ?> -->

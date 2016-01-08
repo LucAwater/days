@@ -1366,6 +1366,17 @@ main {
     width: 100%;
     margin: auto; }
 
+main .page-heading {
+  padding: 80px 0;
+  margin-bottom: 20px;
+  background-color: #f4f5f6; }
+  main .page-heading h1, main .page-heading h1 span, h1 main .page-heading span {
+    max-width: 700px;
+    margin: auto; }
+    main .page-heading h1 span, h1 main .page-heading span span {
+      margin-left: 25px;
+      color: #e0e0e0; }
+
 main {
   z-index: 900;
   height: auto !important;
@@ -1505,17 +1516,6 @@ button,
   bottom: 30px;
   position: fixed;
   z-index: 999; }
-
-.week-heading {
-  padding: 80px 0;
-  margin-bottom: 20px;
-  background-color: #f4f5f6; }
-  .week-heading h1, .week-heading h1 span, h1 .week-heading span {
-    max-width: 700px;
-    margin: auto; }
-    .week-heading h1 span, h1 .week-heading span span {
-      margin-left: 25px;
-      color: #e0e0e0; }
 
 .activities {
   height: auto;

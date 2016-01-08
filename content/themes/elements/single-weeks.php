@@ -22,9 +22,8 @@ if( $query->have_posts() ):
     $date_until = get_field( 'date_until' );
 
     echo
-    '<div class="week-heading">
+    '<div class="page-heading">
       <h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>
-      <a href="javascript:window.print()" id="button-print" class="button">print this page</a>
     </div>';
 
     // Loop through the days
@@ -35,12 +34,6 @@ if( $query->have_posts() ):
     /*
      * Totals
      */
-    /*
-    Loop through all projects of the week
-    Get the amount of hours
-    add them to an array_sum
-    show the output of the array_sum
-    */
     $week_total = array();
 
     foreach( $days as $day ):

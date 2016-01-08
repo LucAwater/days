@@ -14,3 +14,21 @@ main{
     margin: auto;
   }
 }
+
+main .page-heading{
+  padding: 80px 0;
+  margin-bottom: 20px;
+
+  background-color: $grey-light;
+
+  h1{
+    max-width: 700px;
+    margin: auto;
+
+    span{
+      margin-left: 25px;
+
+      color: $grey;
+    }
+  }
+}
