@@ -1525,6 +1525,8 @@ button,
   padding: 25px 0; }
   .activities h2 {
     margin-bottom: 15px; }
+    .activities h2 span {
+      padding-left: 15px; }
 
 .activities table {
   width: 100%; }

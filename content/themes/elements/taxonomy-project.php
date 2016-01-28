@@ -29,9 +29,9 @@ if( $query->have_posts() ):
     $date_until = get_field( 'date_until' );
 
     // Loop through the days
-    // Open the day and the table
-    days_project_start($day);
-      echo '<p class="is-uppercase is-bold">' . get_the_title() . '<span> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</p>';
+    // Open the week and the table
+    weeks_start();
+      echo '<h2 class="is-bold">' . get_the_title() . '<span> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h2>';
 
       days_table_start();
 
@@ -40,7 +40,7 @@ if( $query->have_posts() ):
         endforeach;
 
       days_table_end();
-    days_end();
+    weeks_end();
 
   endwhile;
 endif;

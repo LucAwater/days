@@ -31,4 +31,18 @@ function days_project_single($day, $project) {
 
   endif;
 }
+
+function days_type_single($day, $type) {
+  if(! empty($day[1][0]['item_activity']) ):
+
+    // Loop through activities
+    $activities = $day[1];
+    foreach( $activities as $activity ):
+      if( $activity['item_type']->term_id == $type->term_id ){
+        activities_single($activity);
+      }
+    endforeach;
+
+  endif;
+}
 ?>

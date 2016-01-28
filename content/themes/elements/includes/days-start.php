@@ -9,7 +9,11 @@ function days_end() {
   echo '</div>';
 }
 
-function days_project_start($day) {
-  echo '<div class="activities day">';
+function weeks_start() {
+  echo '<div class="activities week">';
+}
+
+function weeks_end() {
+  echo '</div>';
 }
 ?>
