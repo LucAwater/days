@@ -21,7 +21,11 @@
   tbody tr{
     td{
       vertical-align: top;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
+
     .activity{
       width: 50%;
       padding-right: 10px;

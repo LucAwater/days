@@ -16,4 +16,12 @@ function weeks_start() {
 function weeks_end() {
   echo '</div>';
 }
+
+function year_start() {
+  echo '<div class="activities year">';
+}
+
+function year_end() {
+  echo '</div>';
+}
 ?>

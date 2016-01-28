@@ -1532,7 +1532,10 @@ button,
   width: 100%; }
   .activities table colgroup td,
   .activities table tbody tr td {
-    vertical-align: top; }
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
   .activities table colgroup .activity,
   .activities table tbody tr .activity {
     width: 50%;

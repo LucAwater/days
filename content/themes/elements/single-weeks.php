@@ -9,8 +9,8 @@ $args = array(
 $query = new WP_Query( $args );
 
 // Start the query loop
-if( $query->have_posts() ):
-  while( $query->have_posts() ) : $query->the_post();
+if( have_posts() ):
+  while( have_posts() ): the_post();
 
     /*
      * Days
