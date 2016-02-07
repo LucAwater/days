@@ -188,8 +188,17 @@ $option_theme = get_option('tamed_theme', 'default');
                 echo '<li data-page="' . $item[2] . '" draggable="true"><p>' . preg_replace('/[0-9]+/', '', $item[0]) . '</p><span>remove</span></li>';
               }
             }
-
           echo '</ul>';
+
+          $items_removed = json_decode(get_option('tamed_menu_removals'), true);
+
+          if( $items_removed ):
+            echo '<ul id="tamed-menu-removals">';
+              foreach( $items_removed as $item ){
+                echo '<li data-page="' . $item['page'] . '" draggable="true"><p>' . preg_replace('/[0-9]+/', '', $item['name']) . '</p><span>restore</span></li>';
+              }
+            echo '</ul>';
+          endif;
         }
         menu_print();
         ?>
