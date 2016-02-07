@@ -11,7 +11,8 @@ echo
 // Build the query
 $args = array(
   'post_type'       => 'weeks',
-  'posts_per_page'  => -1
+  'posts_per_page'  => -1,
+  'order'           => 'ASC'
 );
 $query = new WP_Query( $args );
 
@@ -31,6 +32,7 @@ if( $query->have_posts() ):
     // Loop through the days
     // Open the week and the table
     weeks_start();
+      echo '<input type="checkbox">';
       echo '<h2 class="is-bold">' . get_the_title() . '<span> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h2>';
 
       days_table_start();
@@ -40,6 +42,30 @@ if( $query->have_posts() ):
         endforeach;
 
       days_table_end();
+
+      /*
+       * Totals
+       */
+      $week_total = array();
+
+      foreach( $days as $day ):
+        $activities = $day[1];
+        foreach( $activities as $activity ):
+          if( $activity['item_project'] == $project->term_id ){
+            $hours = $activity['item_hours'];
+            array_push($week_total, $hours);
+          }
+        endforeach;
+      endforeach;
+
+      echo '<div class="totals week">';
+        $week_total = array_sum($week_total);
+        if( $week_total < 1 ){
+          echo '<p>No entries this week</p>';
+        } else {
+          echo '<p class="is-bold">Total hours this week: ' . $week_total . '</p>';
+        }
+      echo '</div>';
     weeks_end();
 
   endwhile;

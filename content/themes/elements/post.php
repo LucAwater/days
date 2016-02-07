@@ -5,7 +5,7 @@ get_header();
 $date_from = get_field( 'date_from' );
 $date_until = get_field( 'date_until' );
 
-echo '<h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>';
+echo '<h1 style="font-size:2em">' . get_the_title() . '<span style="font-size:.6em" class="is-grey"> ' . substr($date_from, 0, 10) . ' – ' . substr($date_until, 0, 10) . '</h1>';
 
 /*
  * Days table

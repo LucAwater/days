@@ -658,9 +658,15 @@ body {
   margin: 5mm 15mm; }
 
 .page-heading {
-  padding: 5mm 0;
-  margin-bottom: 10mm;
+  padding: 5mm 0 !important;
+  margin-bottom: 10mm !important;
   border-bottom: thin solid #e0e0e0; }
 
 #button-print {
+  display: none; }
+
+.week input[type="checkbox"] {
+  display: none; }
+
+.print-hide {
   display: none; }

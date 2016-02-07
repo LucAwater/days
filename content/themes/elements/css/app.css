@@ -1586,8 +1586,7 @@ button,
 .totals {
   max-width: 700px;
   margin: auto;
-  margin-top: 50px;
-  padding-top: 25px;
+  margin-top: 25px;
   text-align: right;
   border-top: 2px solid #e0e0e0; }
   .totals p:last-child, .totals span:last-child {
