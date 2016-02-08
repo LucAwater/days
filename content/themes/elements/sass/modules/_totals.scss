@@ -1,0 +1,12 @@
+.totals{
+  max-width: 700px;
+  margin: auto;
+  margin-top: 25px;
+
+  text-align: right;
+  border-top: 2px solid $grey;
+
+  p:last-child{
+    margin-top: 1em;
+  }
+}

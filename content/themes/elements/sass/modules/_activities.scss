@@ -1,10 +1,75 @@
 .activities{
   height: auto;
+  max-width: 700px;
+  margin: auto;
   overflow: hidden;
   padding: 25px 0;
 
   h2{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+
+    span{
+      padding-left: 15px;
+    }
+  }
+}
+
+.activities table{
+  width: 100%;
+
+  colgroup,
+  tbody tr{
+    td{
+      vertical-align: top;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-transform: lowercase;
+      overflow: hidden;
+    }
+
+    .activity{
+      width: 50%;
+      padding-right: 10px;
+    }
+
+    .project{
+      width: 15%;
+      padding-right: 10px;
+    }
+
+    .client{
+      width: 15%;
+      padding-right: 10px;
+    }
+
+    .type{
+      width: 15%;
+      text-align: left;
+      padding-right: 10px;
+    }
+
+    .hours{
+      width: 5%;
+      text-align: right;
+    }
+  }
+
+  thead tr{
+    th{
+      padding-bottom: 5px;
+      text-align: left;
+
+      span{
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: lowercase;
+        color: $grey;
+      }
+    }
+
+    th:last-child{
+      text-align: right;
+    }
   }
 }
 

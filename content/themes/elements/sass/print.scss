@@ -1,0 +1,32 @@
+// BASE
+@import
+  "base/_reset",
+  "base/_mixins",
+  "base/_functions",
+  "base/_colors",
+
+  "base/typo/_fonts",
+  "base/typo/_typography";
+
+body{
+  margin: 5mm 15mm;
+}
+
+.page-heading{
+  padding: 5mm 0 !important;
+  margin-bottom: 10mm !important;
+
+  border-bottom: thin solid $grey;
+}
+
+#button-print{
+  display: none;
+}
+
+.week input[type="checkbox"]{
+  display: none;
+}
+
+.print-hide{
+  display: none;
+}

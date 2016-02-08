@@ -4,49 +4,31 @@
 // So on either sides of a column it's 30 / 2 = 15px
 // Side margin = 60 - 15 = 45px
 
-header{
-  padding-left: $side-margin;
-  padding-right: $side-margin;
-}
-
-main,
-footer{
-  padding-left: $side-margin;
-  padding-right: $side-margin;
-}
-
-aside{
-  top: 0;
-  left: 0;
-  position: fixed;
-
-  width: 300px;
-  height: 100%;
-
-  background-color: $grey-light;
-}
-
 main{
   float: right;
 
-  width: calc( 100% - 300px );
+  width: 100%;
 
   div.content{
     width: 100%;
-    max-width: 700px;
     margin: auto;
   }
 }
 
-@media #{$small-only}{
-  header{
-    padding-left: $side-margin-small;
-    padding-right: $side-margin-small;
-  }
+main .page-heading{
+  padding: 80px 0;
+  margin-bottom: 20px;
 
-  main,
-  footer{
-    padding-left: $side-margin-small;
-    padding-right: $side-margin-small;
+  background-color: $grey-light;
+
+  h1{
+    max-width: 700px;
+    margin: auto;
+
+    span{
+      margin-left: 25px;
+
+      color: $grey;
+    }
   }
 }

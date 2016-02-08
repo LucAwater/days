@@ -718,6 +718,9 @@ ul {
 .row {
   max-width: none; }
 
+a[href=""] {
+  pointer-events: none; }
+
 .margin-t1 {
   margin-top: 0.0625rem !important; }
 
@@ -1318,37 +1321,46 @@ ul {
 .margin-b100 {
   margin-bottom: 6.25rem !important; }
 
-h1, h1 span, h2, p, span, a {
-  font-family: 'source-code-pro', sans-serif;
+h1, h1 span, h2, p, a, span,
+select {
+  font-family: "brandon-grotesque";
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision; }
+  h1.is-bold, h2.is-bold, p.is-bold, a.is-bold, span.is-bold,
+  select.is-bold {
+    font-weight: 700; }
 
 h1, h1 span {
-  font-family: 'futura-pt', sans-serif;
   font-size: 40px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase; }
 
 h2 {
-  font-family: 'futura-pt', sans-serif;
-  font-size: 21px;
   letter-spacing: 2px;
+  text-transform: uppercase; }
+
+p {
+  font-size: 18px;
+  line-height: 1.4;
   text-transform: lowercase; }
 
-p, span {
-  font-size: 15px;
-  line-height: 1.4; }
-
 a {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.4;
+  text-decoration: none;
   color: black;
-  text-decoration: underline;
   cursor: pointer; }
+  a:hover, a:active {
+    text-decoration: underline; }
   a.link-h1, a.link-h2, a.link-h3, a.link-p {
     text-decoration: none; }
+
+span,
+select {
+  font-size: 18px;
+  line-height: 1.4; }
 
 html,
 body {
@@ -1356,47 +1368,32 @@ body {
   min-height: 100%;
   background: white; }
 
-header {
-  padding-left: 3.75rem;
-  padding-right: 3.75rem; }
-
-main,
-footer {
-  padding-left: 3.75rem;
-  padding-right: 3.75rem; }
-
-aside {
-  top: 0;
-  left: 0;
-  position: fixed;
-  width: 300px;
-  height: 100%;
-  background-color: #f0f0f0; }
-
 main {
   float: right;
-  width: calc( 100% - 300px ); }
+  width: 100%; }
   main div.content {
     width: 100%;
-    max-width: 700px;
     margin: auto; }
 
-@media only screen and (max-width: 31.25em) {
-  header {
-    padding-left: 1.875rem;
-    padding-right: 1.875rem; }
+main .page-heading {
+  padding: 80px 0;
+  margin-bottom: 20px;
+  background-color: #f4f5f6; }
+  main .page-heading h1, main .page-heading h1 span, h1 main .page-heading span {
+    max-width: 700px;
+    margin: auto; }
+    main .page-heading h1 span, h1 main .page-heading span span {
+      margin-left: 25px;
+      color: #e0e0e0; }
 
-  main,
-  footer {
-    padding-left: 1.875rem;
-    padding-right: 1.875rem; } }
 main {
+  z-index: 900;
   height: auto !important;
   height: 100%;
   min-height: 100%;
   overflow: hidden;
-  background: white;
-  z-index: 900; }
+  padding-bottom: 150px;
+  background: white; }
 
 header {
   display: -webkit-box;
@@ -1434,7 +1431,7 @@ footer {
   footer > img {
     max-width: 250px;
     margin-bottom: 50px; }
-  footer p, footer span {
+  footer p {
     margin-bottom: 1em; }
   footer ul li {
     width: 35px;
@@ -1453,11 +1450,6 @@ aside > div {
     position: absolute;
     width: 50%;
     margin: auto; }
-
-div.content h1, div.content h1 span, h1 div.content span {
-  padding: 25px 0; }
-  div.content h1 span, h1 div.content span span {
-    margin-left: 25px; }
 
 a.trigger-menu {
   width: 35px;
@@ -1511,27 +1503,162 @@ nav ul {
 nav ul li.current a {
   font-weight: bold; }
 
+button,
+.button {
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+  padding: 8px 15px;
+  color: white;
+  border-radius: 3px;
+  background-color: #65c080; }
+  button:hover, button:active,
+  .button:hover,
+  .button:active {
+    text-decoration: none;
+    background-color: #46ac64; }
+
+#button-print {
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  z-index: 999; }
+
 .activities {
   height: auto;
+  max-width: 700px;
+  margin: auto;
   overflow: hidden;
   padding: 25px 0; }
   .activities h2 {
-    margin-bottom: 10px; }
+    margin-bottom: 15px; }
+    .activities h2 span {
+      padding-left: 15px; }
+
+.activities table {
+  width: 100%; }
+  .activities table colgroup td,
+  .activities table tbody tr td {
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: lowercase;
+    overflow: hidden; }
+  .activities table colgroup .activity,
+  .activities table tbody tr .activity {
+    width: 50%;
+    padding-right: 10px; }
+  .activities table colgroup .project,
+  .activities table tbody tr .project {
+    width: 15%;
+    padding-right: 10px; }
+  .activities table colgroup .client,
+  .activities table tbody tr .client {
+    width: 15%;
+    padding-right: 10px; }
+  .activities table colgroup .type,
+  .activities table tbody tr .type {
+    width: 15%;
+    text-align: left;
+    padding-right: 10px; }
+  .activities table colgroup .hours,
+  .activities table tbody tr .hours {
+    width: 5%;
+    text-align: right; }
+  .activities table thead tr th {
+    padding-bottom: 5px;
+    text-align: left; }
+    .activities table thead tr th span {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: lowercase;
+      color: #e0e0e0; }
+  .activities table thead tr th:last-child {
+    text-align: right; }
 
 .activities ul li {
   height: auto;
   overflow: hidden; }
-  .activities ul li p, .activities ul li span {
+  .activities ul li p {
     text-align: center; }
-    .activities ul li p span, .activities ul li span span {
+    .activities ul li p span {
       float: left;
       width: 25%;
       text-align: left; }
-    .activities ul li p span:first-child, .activities ul li span span:first-child {
+    .activities ul li p span:first-child {
       width: 50%;
       text-align: left; }
-    .activities ul li p span:last-child, .activities ul li span span:last-child {
+    .activities ul li p span:last-child {
       text-align: right; }
+
+.totals {
+  max-width: 700px;
+  margin: auto;
+  margin-top: 25px;
+  text-align: right;
+  border-top: 2px solid #e0e0e0; }
+  .totals p:last-child {
+    margin-top: 1em; }
+
+#filter {
+  margin-bottom: 55px;
+  padding: 80px 0;
+  background: #f4f5f6; }
+  #filter #filter-client,
+  #filter #filter-project {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 40px; }
+    #filter #filter-client > p,
+    #filter #filter-project > p {
+      margin-bottom: 10px;
+      color: #b3b3b3; }
+    #filter #filter-client li,
+    #filter #filter-project li {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 10px; }
+      #filter #filter-client li a,
+      #filter #filter-project li a {
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        display: block;
+        padding: 3px 10px;
+        color: #b3b3b3;
+        border-radius: 3px;
+        border: thin solid #b3b3b3; }
+    #filter #filter-client li.current a,
+    #filter #filter-client li a:hover,
+    #filter #filter-project li.current a,
+    #filter #filter-project li a:hover {
+      color: black;
+      border-color: black;
+      text-decoration: none; }
+  #filter #filter-week {
+    max-width: 700px;
+    margin: 0 auto; }
+    #filter #filter-week > p {
+      margin-bottom: 10px;
+      color: #b3b3b3; }
+    #filter #filter-week #selected-date {
+      margin-left: 10px;
+      display: inline-block;
+      color: #b3b3b3; }
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 3px 10px;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  border: thin solid black; }
 
 /*
  * Show and Hide class functions
@@ -1726,34 +1853,44 @@ nav ul li.current a {
   display: block;
   margin: auto; }
 
-h1.is-italic, h2.is-italic, p.is-italic, span.is-italic, a.is-italic {
+h1.is-italic, h2.is-italic, p.is-italic, a.is-italic, span.is-italic,
+select.is-italic {
   font-style: italic; }
-h1.is-underlined, h2.is-underlined, p.is-underlined, span.is-underlined, a.is-underlined {
+h1.is-underlined, h2.is-underlined, p.is-underlined, a.is-underlined, span.is-underlined,
+select.is-underlined {
   text-decoration: underline; }
-h1.is-capitalized, h2.is-capitalized, p.is-capitalized, span.is-capitalized, a.is-capitalized {
+h1.is-capitalized, h2.is-capitalized, p.is-capitalized, a.is-capitalized, span.is-capitalized,
+select.is-capitalized {
   text-transform: capitalize; }
-h1.is-uppercase, h2.is-uppercase, p.is-uppercase, span.is-uppercase, a.is-uppercase {
+h1.is-uppercase, h2.is-uppercase, p.is-uppercase, a.is-uppercase, span.is-uppercase,
+select.is-uppercase {
   text-transform: uppercase; }
-h1.is-lowercase, h2.is-lowercase, p.is-lowercase, span.is-lowercase, a.is-lowercase {
+h1.is-lowercase, h2.is-lowercase, p.is-lowercase, a.is-lowercase, span.is-lowercase,
+select.is-lowercase {
   text-transform: lowercase; }
-h1.is-bold, h2.is-bold, p.is-bold, span.is-bold, a.is-bold {
-  font-weight: 500; }
-h1.is-not-bold, h2.is-not-bold, p.is-not-bold, span.is-not-bold, a.is-not-bold {
+h1.is-not-bold, h2.is-not-bold, p.is-not-bold, a.is-not-bold, span.is-not-bold,
+select.is-not-bold {
   font-weight: normal; }
-h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, span.is-aligned-center, a.is-aligned-center {
+h1.is-aligned-center, h2.is-aligned-center, p.is-aligned-center, a.is-aligned-center, span.is-aligned-center,
+select.is-aligned-center {
   text-align: center; }
-h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, span.is-aligned-left, a.is-aligned-left {
+h1.is-aligned-left, h2.is-aligned-left, p.is-aligned-left, a.is-aligned-left, span.is-aligned-left,
+select.is-aligned-left {
   text-align: left; }
-h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, span.is-aligned-right, a.is-aligned-right {
+h1.is-aligned-right, h2.is-aligned-right, p.is-aligned-right, a.is-aligned-right, span.is-aligned-right,
+select.is-aligned-right {
   text-align: right; }
-h1.is-black, h2.is-black, p.is-black, span.is-black, a.is-black {
+h1.is-black, h2.is-black, p.is-black, a.is-black, span.is-black,
+select.is-black {
   color: black; }
-h1.is-white, h2.is-white, p.is-white, span.is-white, a.is-white {
+h1.is-white, h2.is-white, p.is-white, a.is-white, span.is-white,
+select.is-white {
   color: white; }
-h1.is-grey, h2.is-grey, p.is-grey, span.is-grey, a.is-grey {
-  color: #f0f0f0; }
+h1.is-grey, h2.is-grey, p.is-grey, a.is-grey, span.is-grey,
+select.is-grey {
+  color: #f4f5f6; }
 
-p.is-small, span.is-small {
+p.is-small {
   font-size: 15px; }
 
 body > * {
