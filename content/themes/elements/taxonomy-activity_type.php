@@ -10,7 +10,7 @@ echo
 
 // Build the query
 $args = array(
-  'post_type'       => 'weeks',
+  'post_type'       => 'week',
   'posts_per_page'  => -1
 );
 $query = new WP_Query( $args );
