@@ -1,9 +1,19 @@
 <?php
+function day_start($day) {
+  echo
+  '<div class="activities day">
+    <h2 class="is-bold">' . $day[0] . '</h2>';
+}
+
+function day_end() {
+  echo '</div>';
+}
+
 function days_single($day) {
   if(! empty($day[1][0]['item_activity']) ):
 
     // Open the day and the table
-    days_start($day);
+    day_start($day);
       days_table_start();
 
         // Loop through activities
@@ -13,7 +23,7 @@ function days_single($day) {
         endforeach;
 
       days_table_end();
-    days_end();
+    day_end();
 
   endif;
 }

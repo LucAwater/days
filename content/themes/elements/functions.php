@@ -2,26 +2,22 @@
 /**
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
- add_action('wp_head', 'show_template');
- function show_template() {
- 	global $template;
- 	print_r($template);
- }
+
 // Includes
 require_once('includes/scripts.php');
 
-require_once('includes/table-start.php');
-require_once('includes/table-end.php');
+require_once('includes/admin/custom-postTypes.php');
+require_once('includes/admin/custom-taxonomies.php');
 
-require_once('includes/activities.php');
-require_once('includes/days.php');
-require_once('includes/days-start.php');
-require_once('includes/days-single.php');
-
-require_once('includes/admin/custom-content.php');
+require_once('includes/functions/days.php');
+require_once('includes/functions/day.php');
+require_once('includes/functions/week.php');
+require_once('includes/functions/year.php');
+require_once('includes/functions/table.php');
+require_once('includes/functions/activity.php');
 
 // Initialize mobile detect
-require_once('includes/Mobile_Detect.php');
+require_once('includes/mobile-detect.php');
 $detect = new Mobile_Detect;
 
 // Admin favicon

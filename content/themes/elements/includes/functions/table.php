@@ -20,4 +20,9 @@ function days_table_start() {
       </tr>
     </thead>';
 }
+
+function days_table_end() {
+  echo
+  '</table>';
+}
 ?>

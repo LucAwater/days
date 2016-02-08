@@ -26,7 +26,7 @@ if( $query->have_posts() ):
     /*
      * Days
      */
-    include('includes/days.php');
+    include('includes/functions/days.php');
 
     // Get week and dates
     $date_from = get_field( 'date_from' );
@@ -34,7 +34,7 @@ if( $query->have_posts() ):
 
     // Loop through the days
     // Open the week and the table
-    weeks_start();
+    week_start();
       echo '<input type="checkbox">';
       echo '<h2 class="is-bold">' . get_the_title() . '<span> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h2>';
 
@@ -69,7 +69,7 @@ if( $query->have_posts() ):
           echo '<p class="is-bold">Total hours this week: ' . $week_total . '</p>';
         }
       echo '</div>';
-    weeks_end();
+    week_end();
 
   endwhile;
 endif;

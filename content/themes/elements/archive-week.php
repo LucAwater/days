@@ -15,7 +15,7 @@ if( $query->have_posts() ):
     /*
      * Days
      */
-    include('includes/days.php');
+    include('includes/functions/days.php');
 
     // Get week and dates
     $date_from = get_field( 'date_from' );

@@ -22,7 +22,7 @@ if( $query->have_posts() ):
     /*
      * Days
      */
-    include('includes/days.php');
+    include('includes/functions/days.php');
 
     // Get week and dates
     $date_from = get_field( 'date_from' );
@@ -30,7 +30,7 @@ if( $query->have_posts() ):
 
     // Loop through the days
     // Open the day and the table
-    weeks_start();
+    week_start();
       echo '<h2 class="is-bold">' . get_the_title() . '<span> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h2>';
 
       days_table_start();
@@ -40,7 +40,7 @@ if( $query->have_posts() ):
         endforeach;
 
       days_table_end();
-    weeks_end();
+    week_end();
 
   endwhile;
 endif;
