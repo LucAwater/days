@@ -2,7 +2,11 @@
 /**
  * @package WordPress
  * @subpackage HTML5_Boilerplate */
-
+ add_action('wp_head', 'show_template');
+ function show_template() {
+ 	global $template;
+ 	print_r($template);
+ }
 // Includes
 require_once('includes/scripts.php');
 

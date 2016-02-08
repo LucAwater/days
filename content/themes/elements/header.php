@@ -54,38 +54,72 @@
   <!-- Main content -->
   <main id="main" role="main">
     <div class="content">
+      <!-- Filter -->
       <?php
       $clients = get_terms('client', 'hide_empty=0');
       $projects = get_terms('project', 'hide_empty=0');
       $weeks = new WP_Query( array('post_type' => 'weeks') );
       ?>
       <div id="filter">
+        <!-- Clients -->
         <?php if( $clients ): ?>
           <ul id="filter-client">
             <p class="is-grey">Select client</p>
 
-            <li class="current"><a>All</a></li>
-            <?php foreach( $clients as $client ): ?>
-              <li>
-                <a href="<?php echo home_url() . '/client/' . $client->slug; ?>"><?php echo $client->name; ?></a>
-              </li>
-            <?php endforeach; ?>
+            <?php
+            if( !is_tax('client') ):
+              echo '<li class="current"><a>All</a></li>';
+
+              foreach( $clients as $client ):
+                echo '<li><a href="' . home_url() . '/client/' . $client->slug . '">' . $client->name . '</a></li>';
+              endforeach;
+            else:
+              $client_current = get_query_var('client');
+
+              echo '<li><a>All</a></li>';
+
+              foreach( $clients as $client ):
+                if( $client_current === $client->slug ){
+                  echo '<li class="current"><a href="' . home_url() . '/client/' . $client->slug . '">' . $client->name . '</a></li>';
+                } else {
+                  echo '<li><a href="' . home_url() . '/client/' . $client->slug . '">' . $client->name . '</a></li>';
+                }
+              endforeach;
+            endif;
+            ?>
           </ul>
         <?php endif; ?>
 
+        <!-- Projects -->
         <?php if( $projects ): ?>
           <ul id="filter-project">
             <p class="is-grey">Select project</p>
 
-            <li class="current"><a>All</a></li>
-            <?php foreach( $projects as $project ): ?>
-              <li>
-                <a href="<?php echo home_url() . '/project/' . $project->slug; ?>"><?php echo $project->name; ?></a>
-              </li>
-            <?php endforeach; ?>
+            <?php
+            if( !is_tax('project') ):
+              echo '<li class="current"><a>All</a></li>';
+
+              foreach( $projects as $project ):
+                echo '<li><a href="' . home_url() . '/project/' . $project->slug . '">' . $project->name . '</a></li>';
+              endforeach;
+            else:
+              $project_current = get_query_var('project');
+
+              echo '<li><a>All</a></li>';
+
+              foreach( $projects as $project ):
+                if( $project_current === $project->slug ){
+                  echo '<li class="current"><a href="' . home_url() . '/project/' . $project->slug . '">' . $project->name . '</a></li>';
+                } else {
+                  echo '<li><a href="' . home_url() . '/project/' . $project->slug . '">' . $project->name . '</a></li>';
+                }
+              endforeach;
+            endif;
+            ?>
           </ul>
         <?php endif; ?>
 
+        <!-- Weeks -->
         <?php
         if( $weeks->have_posts() ):
           $year = '';
@@ -94,6 +128,8 @@
             <p class="is-grey">Select week</p>
 
             <select>
+              <option value="all">All</option>
+
               <?php
               while( $weeks->have_posts() ): $weeks->the_post();
                 $date_from = get_field( 'date_from' );

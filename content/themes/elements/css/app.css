@@ -1603,6 +1603,7 @@ button,
     margin-top: 1em; }
 
 #filter {
+  margin-bottom: 55px;
   padding: 80px 0;
   background: #f4f5f6; }
   #filter #filter-client,
@@ -1655,6 +1656,7 @@ select {
   -moz-appearance: none;
   padding: 3px 10px;
   outline: 0;
+  cursor: pointer;
   border-radius: 3px;
   border: thin solid black; }
 
