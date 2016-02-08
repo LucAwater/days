@@ -58,20 +58,13 @@
       $clients = get_terms('client', 'hide_empty=0');
       $projects = get_terms('project', 'hide_empty=0');
       $weeks = new WP_Query( array('post_type' => 'weeks') );
-      // [term_id] => 61
-      // [name] => Envato
-      // [slug] => envato
-      // [term_group] => 0
-      // [term_taxonomy_id] => 61
-      // [taxonomy] => client
-      // [description] =>
-      // [parent] => 0
-      // [count] => 0
       ?>
       <div id="filter">
         <?php if( $clients ): ?>
           <ul id="filter-client">
-            <p class="is-grey">Clients</p>
+            <p class="is-grey">Select client</p>
+
+            <li class="current"><a>All</a></li>
             <?php foreach( $clients as $client ): ?>
               <li>
                 <a href="<?php echo home_url() . '/client/' . $client->slug; ?>"><?php echo $client->name; ?></a>
@@ -82,7 +75,9 @@
 
         <?php if( $projects ): ?>
           <ul id="filter-project">
-            <p class="is-grey">Projects</p>
+            <p class="is-grey">Select project</p>
+
+            <li class="current"><a>All</a></li>
             <?php foreach( $projects as $project ): ?>
               <li>
                 <a href="<?php echo home_url() . '/project/' . $project->slug; ?>"><?php echo $project->name; ?></a>
@@ -91,13 +86,35 @@
           </ul>
         <?php endif; ?>
 
-        <?php if( $weeks->have_posts() ): ?>
-          <ul id="filter-week">
-            <?php while( $weeks->have_posts() ): $weeks->the_post(); ?>
-              <li>
-                <a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a>
-              </li>
-            <?php endwhile; ?>
-          </ul>
+        <?php
+        if( $weeks->have_posts() ):
+          $year = '';
+          ?>
+          <div id="filter-week">
+            <p class="is-grey">Select week</p>
+
+            <select>
+              <?php
+              while( $weeks->have_posts() ): $weeks->the_post();
+                $date_from = get_field( 'date_from' );
+                $date_until = get_field( 'date_until' );
+
+                $year_from = substr($date_from, -4);
+                $year_until = substr($date_until, -4);
+
+                if( $year != $year_from ):
+                  echo '</optgroup>';
+                  echo '<optgroup label="' . $year_from . '">';
+                    echo '<option value="' . basename( get_permalink() ) . '">' . get_the_title() . '</option>';
+                else:
+                  echo '<option value="' . basename( get_permalink() ) . '">' . get_the_title() . '</option>';
+                endif;
+
+                $year = $year_from;
+              endwhile; ?>
+            </select>
+
+            <p id="selected-date"><?php echo get_field( 'date_from' ) . ' – ' . get_field( 'date_until' ); ?></p>
+          </div>
         <?php wp_reset_postdata(); endif; ?>
       </div>

@@ -622,12 +622,14 @@ a[href=""] {
 .margin-b100 {
   margin-bottom: rem-calc(100) !important; }
 
-h1, h1 span, h2, p, span, a {
+h1, h1 span, h2, p, a, span,
+select {
   font-family: "brandon-grotesque";
   font-size: 16px;
   font-weight: normal;
   text-rendering: geometricPrecision; }
-  h1.is-bold, h2.is-bold, p.is-bold, span.is-bold, a.is-bold {
+  h1.is-bold, h2.is-bold, p.is-bold, a.is-bold, span.is-bold,
+  select.is-bold {
     font-weight: 700; }
 
 h1, h1 span {
@@ -640,7 +642,7 @@ h2 {
   letter-spacing: 2px;
   text-transform: uppercase; }
 
-p, span {
+p {
   font-size: 18px;
   line-height: 1.4;
   text-transform: lowercase; }
@@ -649,13 +651,17 @@ a {
   font-size: 18px;
   line-height: 1.4;
   text-decoration: none;
-  text-transform: lowercase;
   color: black;
   cursor: pointer; }
   a:hover, a:active {
     text-decoration: underline; }
   a.link-h1, a.link-h2, a.link-h3, a.link-p {
     text-decoration: none; }
+
+span,
+select {
+  font-size: 18px;
+  line-height: 1.4; }
 
 body {
   margin: 5mm 15mm; }

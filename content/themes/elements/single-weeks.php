@@ -17,14 +17,14 @@ if( have_posts() ):
      */
     include('includes/days.php');
 
-    // Get week and dates
-    $date_from = get_field( 'date_from' );
-    $date_until = get_field( 'date_until' );
-
-    echo
-    '<div class="page-heading">
-      <h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>
-    </div>';
+    // // Get week and dates
+    // $date_from = get_field( 'date_from' );
+    // $date_until = get_field( 'date_until' );
+    //
+    // echo
+    // '<div class="page-heading">
+    //   <h1>' . get_the_title() . '<span class="is-grey"> ' . substr($date_from, 0, 5) . '–' . substr($date_until, 0, 5) . '</h1>
+    // </div>';
 
     // Loop through the days
     foreach( $days as $day ):

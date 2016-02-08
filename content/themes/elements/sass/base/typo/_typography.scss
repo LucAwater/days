@@ -40,7 +40,6 @@ a{
   font-size: 18px;
   line-height: 1.4;
   text-decoration: none;
-  text-transform: lowercase;
   color: $black;
   cursor: pointer;
 
@@ -57,7 +56,10 @@ a{
   }
 }
 
-span{
+span,
+select{
   @extend %base;
-  @extend p;
+
+  font-size: 18px;
+  line-height: 1.4;
 }
