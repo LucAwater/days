@@ -718,6 +718,9 @@ ul {
 .row {
   max-width: none; }
 
+a[href=""] {
+  pointer-events: none; }
+
 .margin-t1 {
   margin-top: 0.0625rem !important; }
 
@@ -1542,30 +1545,30 @@ button,
     padding-right: 10px; }
   .activities table colgroup .project,
   .activities table tbody tr .project {
-    width: 22.5%;
+    width: 15%;
+    padding-right: 10px; }
+  .activities table colgroup .client,
+  .activities table tbody tr .client {
+    width: 15%;
     padding-right: 10px; }
   .activities table colgroup .type,
   .activities table tbody tr .type {
-    width: 22.5%;
-    text-align: left; }
+    width: 15%;
+    text-align: left;
+    padding-right: 10px; }
   .activities table colgroup .hours,
   .activities table tbody tr .hours {
     width: 5%;
     text-align: right; }
   .activities table thead tr th {
-    padding-bottom: 5px; }
+    padding-bottom: 5px;
+    text-align: left; }
     .activities table thead tr th span {
       font-size: 13px;
       letter-spacing: 2px;
       text-transform: lowercase;
       color: #e0e0e0; }
-  .activities table thead tr th:nth-child(1) {
-    text-align: left; }
-  .activities table thead tr th:nth-child(2) {
-    text-align: left; }
-  .activities table thead tr th:nth-child(3) {
-    text-align: left; }
-  .activities table thead tr th:nth-child(4) {
+  .activities table thead tr th:last-child {
     text-align: right; }
 
 .activities ul li {
@@ -1591,6 +1594,44 @@ button,
   border-top: 2px solid #e0e0e0; }
   .totals p:last-child, .totals span:last-child {
     margin-top: 1em; }
+
+#filter {
+  padding: 80px 0;
+  background: #f4f5f6; }
+  #filter #filter-client,
+  #filter #filter-project {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 40px; }
+    #filter #filter-client > p, #filter #filter-client > span,
+    #filter #filter-project > p,
+    #filter #filter-project > span {
+      margin-bottom: 10px;
+      color: #e0e0e0; }
+    #filter #filter-client li,
+    #filter #filter-project li {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 10px; }
+      #filter #filter-client li a,
+      #filter #filter-project li a {
+        -webkit-transition: 0.2s;
+        -moz-transition: 0.2s;
+        -ms-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        display: block;
+        padding: 3px 10px;
+        color: #e0e0e0;
+        border-radius: 3px;
+        border: thin solid #e0e0e0; }
+    #filter #filter-client li.current a,
+    #filter #filter-client li a:hover,
+    #filter #filter-project li.current a,
+    #filter #filter-project li a:hover {
+      color: black;
+      border-color: black;
+      text-decoration: none; }
 
 /*
  * Show and Hide class functions

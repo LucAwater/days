@@ -3,6 +3,9 @@ get_header();
 
 $project = get_term_by('slug', get_query_var('project'), 'project');
 
+$queried_object = get_queried_object();
+$client = get_field( 'project_client', $queried_object );
+
 echo
 '<div class="page-heading">
   <h1>' . $project->name . '</h1>

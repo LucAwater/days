@@ -32,13 +32,19 @@
     }
 
     .project{
-      width: 22.5%;
+      width: 15%;
+      padding-right: 10px;
+    }
+
+    .client{
+      width: 15%;
       padding-right: 10px;
     }
 
     .type{
-      width: 22.5%;
+      width: 15%;
       text-align: left;
+      padding-right: 10px;
     }
 
     .hours{
@@ -50,6 +56,7 @@
   thead tr{
     th{
       padding-bottom: 5px;
+      text-align: left;
 
       span{
         font-size: 13px;
@@ -59,19 +66,7 @@
       }
     }
 
-    th:nth-child(1){
-      text-align: left;
-    }
-
-    th:nth-child(2){
-      text-align: left;
-    }
-
-    th:nth-child(3){
-      text-align: left;
-    }
-
-    th:nth-child(4){
+    th:last-child{
       text-align: right;
     }
   }

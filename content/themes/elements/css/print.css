@@ -19,6 +19,9 @@ ul {
 .row {
   max-width: none; }
 
+a[href=""] {
+  pointer-events: none; }
+
 .margin-t1 {
   margin-top: rem-calc(1) !important; }
 

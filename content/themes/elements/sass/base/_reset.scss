@@ -23,3 +23,7 @@ ul{
 .row{
   max-width: none;
 }
+
+a[href=""]{
+  pointer-events: none;
+}
