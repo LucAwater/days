@@ -99,7 +99,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 394,
+		"initialSize": 1389,
 		"inputAbbreviatedPath": "\/img\/favicon-32x32.png",
 		"outputAbbreviatedPath": "\/img\/favicon-32x32.png",
 		"outputPathIsOutsideProject": 0,
@@ -173,6 +173,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/includes\/functions\/filter.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/includes\/functions\/filter.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/includes\/functions\/table.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -240,8 +249,8 @@
 		},
 	"\/js\/printing.js": {
 		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 1,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/printing.js",
 		"outputAbbreviatedPath": "\/js\/min\/printing-min.js",
 		"outputPathIsOutsideProject": 0,
@@ -865,12 +874,6 @@
 			"followForSyntaxChecking": 1,
 			"linkedFileAbbreviatedPath": "\/coffee\/resize.coffee",
 			"position": 3,
-			"type": 1
-			},
-		{
-			"followForSyntaxChecking": 1,
-			"linkedFileAbbreviatedPath": "\/js\/printing.js",
-			"position": 4,
 			"type": 1
 			}
 		]

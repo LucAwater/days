@@ -9,6 +9,7 @@ require_once('includes/scripts.php');
 require_once('includes/admin/custom-postTypes.php');
 require_once('includes/admin/custom-taxonomies.php');
 
+require_once('includes/functions/filter.php');
 require_once('includes/functions/days.php');
 require_once('includes/functions/day.php');
 require_once('includes/functions/week.php');
