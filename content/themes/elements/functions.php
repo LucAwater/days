@@ -19,7 +19,6 @@ require_once('includes/days-start.php');
 require_once('includes/days-single.php');
 
 require_once('includes/admin/custom-content.php');
-require_once('includes/admin/login.php');
 
 // Initialize mobile detect
 require_once('includes/Mobile_Detect.php');
